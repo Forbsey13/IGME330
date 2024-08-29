@@ -1,44 +1,71 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Greeter</title>
-    <style>
-      *{font-size:1.5em;}
-    </style>
-    <script>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Greeter</title>
+  <style>
+    * {
+      font-size: 1.5em;
+    }
+
+    button {
+      font-size: 14pt;
+      width: 150px;
+      height: 50px;
+    }
+
+    @media screen and (min-width:1024px) {
+      body {
+        background: red;
+        padding: 100px;
+      }
+    }
+  </style>
+  <script>
     'use strict';
 
     function init() {
-    // 1 - get a reference to the button
-    let button = document.querySelector("#button-press");
-    console.log(button);
+      // 1 - get a reference to the button
+      let button = document.querySelector("#button-press");
+      console.log(button);
 
-    // 2 - add a click event to button that calls a `sayHello` function
+      // 2 - add a click event to button that calls a `sayHello` function
 
-    button.addEventListener('click', sayHello());
-    //button.onclick
+      button.addEventListener('click', sayHello());
+      //button.onclick
 
-    // 3 - create a `sayHello()` function
-    function sayHello() {
-      // 3A - get name of person from the <input>
-      let firstname = document.querySelector("#input-firstname").value;
-      // 3B - get a reference to the #output <p>
-      let output = document.querySelector("#output");
-      // 3C - update HTML of #output <p>
-      output.innerHTML = "Hello, " + firstname;
-      //output.innerHTML = `Hello, ${firstname} you are here`;
-    }
+      // 3 - create a `sayHello()` function
+      function sayHello() {
+        // 3A - get name of person from the <input>
+        let firstname = document.querySelector("#input-firstname").value;
+        if (firstname == "") {
+          firstname = "Peter";
+        }
+
+        // 3B - get a reference to the #output <p>
+        let output = document.querySelector("#output");
+
+        // 3C - update HTML of #output <p>
+        output.innerHTML = "Hello, " + firstname.trim();
+        //output.innerHTML = `Hello, ${firstname} you are here`;
+
+      }
+
+      document.querySelector("p").style.backgroundColor = "yellow";
+      document.querySelector("p").style.color = "red";
 
     }
 
     window.onload = init;
 
-    </script>
-  </head>
+  </script>
+</head>
+
 <body>
   <button id="button-press">Click Me!</button>
   <input id="input-firstname" placeholder="Type in your name">
   <p id="output">???</p>
 </body>
+
 </html>
