@@ -3,7 +3,7 @@ body {
 }
 
 #output {
-    font-size: 200%;
+    font-size: 300%;
 }
 
 #myButton {
@@ -20,9 +20,7 @@ body {
         flex-direction: column;
     }
 
-    html,
-    body,
-    .container {
+    html, body, .container {
         height: 100%;
         margin: 0;
     }
@@ -34,6 +32,7 @@ body {
         padding: .8rem;
         margin: 0;
         text-align: center;
+        font-family: "Playwrite CU", cursive;
     }
 
     #output {
@@ -82,6 +81,7 @@ body {
 @media only screen and (min-width: 1408px) {
     h1 {
         font-size: 4rem;
-        background-color: aqua;
+        /* background-color: teal; */
+        background: linear-gradient(90deg, rgb(0,128,128) 0%, rgb(0,100,100) 50%, rgba(0,50,50) 100%);
     }
 }
