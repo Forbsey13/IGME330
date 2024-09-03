@@ -1,5 +1,8 @@
 <!doctype html>
 <html lang="en">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nova+Square&display=swap" rel="stylesheet">
 
 <head>
   <meta charset="utf-8" />
@@ -21,21 +24,25 @@
         padding: 100px;
       }
     }
+
+    button {
+      font-family: "Nova Square";
+    }
   </style>
   <script>
     'use strict';
 
     function init() {
       let hiButton = document.querySelector("#hi-button");
-      hiButton.addEventListener("click", function() { greet("Hello, "); });
+      hiButton.addEventListener("click", function () { greet("Hello, "); });
 
       let byeButton = document.querySelector("#bye-button");
-      byeButton.onclick = function() { greet("See Ya, ")};
+      byeButton.onclick = function () { greet("See Ya, ") };
 
       function greet(message) {
         let firstname = document.querySelector("#input-firstname").value.trim();
         let lastname = document.querySelector("#input-lastname").value.trim();
-        
+
         if (firstname == "") {
           firstname = "Peter";
         }
