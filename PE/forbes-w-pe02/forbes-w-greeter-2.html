@@ -5,73 +5,90 @@
 <link href="https://fonts.googleapis.com/css2?family=Nova+Square&display=swap" rel="stylesheet">
 
 <head>
-  <meta charset="utf-8" />
-  <title>Greeter</title>
-  <style>
-    * {
-      font-size: 1.5em;
-    }
-
-    button {
-      font-size: 14pt;
-      width: 150px;
-      height: 50px;
-    }
-
-    @media screen and (min-width:1024px) {
-      body {
-        background: red;
-        padding: 100px;
-      }
-    }
-
-    button {
-      font-family: "Nova Square";
-    }
-  </style>
-  <script>
-    'use strict';
-
-    function init() {
-      let hiButton = document.querySelector("#hi-button");
-      hiButton.addEventListener("click", function () { greet("Hello, "); });
-
-      let byeButton = document.querySelector("#bye-button");
-      byeButton.onclick = function () { greet("See Ya, ") };
-
-      function greet(message) {
-        let firstname = document.querySelector("#input-firstname").value.trim();
-        let lastname = document.querySelector("#input-lastname").value.trim();
-
-        if (firstname == "") {
-          firstname = "Peter";
-        }
-        if (lastname == "") {
-          lastname = "Parker";
+    <meta charset="utf-8" />
+    <title>Greeter</title>
+    <style>
+        * {
+            font-size: 1.5em;
         }
 
-        let output = document.querySelector("#output");
+        button {
+            font-size: 14pt;
+            width: 150px;
+            height: 50px;
+            font-family: "Nova Square";
+        }
 
-        output.innerHTML = `${message} ${firstname} ${lastname}`;
-      }
+        #shoutify {
+            font-family: "Nova Square";
+        }
 
-      document.querySelector("p").style.backgroundColor = "yellow";
-      document.querySelector("p").style.color = "red";
+        @media screen and (min-width:1024px) {
+            body {
+                background: red;
+                padding: 100px;
+            }
+        }
+    </style>
+    <script>
+        'use strict';
 
-    }
+        const init = () => {
+            let hiButton = document.querySelector("#hi-button");
+            // hiButton.addEventListener("click", function () { greet("Hello, "); });
+            hiButton.addEventListener("click", () => { greet("Hello") });
 
-    window.onload = init;
 
-  </script>
+            let byeButton = document.querySelector("#bye-button");
+            // byeButton.onclick = function () { greet("See Ya, ") };
+            byeButton.onclick = () => { greet("See Ya, ") };
+
+            // function greet(message) {
+            const greet = (message) => {
+                let firstname = document.querySelector("#input-firstname").value.trim();
+                let lastname = document.querySelector("#input-lastname").value.trim();
+
+                if (firstname == "") {
+                    firstname = "Peter";
+                }
+                if (lastname == "") {
+                    lastname = "Parker";
+                }
+
+                const checkShoutify = document.querySelector("#shoutify");
+                checkShoutify.addEventListener("change", () => {
+                    if (checkShoutify.checked) {
+                        firstname = firstname.toUpperCase();
+                        lastname = lastname.toUpperCase();
+                        console.log(firstname);
+                        console.log(lastname);
+                    }
+                });
+
+                let output = document.querySelector("#output");
+
+                output.innerHTML = `${message} ${firstname} ${lastname}`;
+            };
+
+            document.querySelector("p").style.backgroundColor = "yellow";
+            document.querySelector("p").style.color = "red";
+        }
+
+        window.onload = init;
+
+    </script>
 </head>
 
 <body>
-  <button class="greet-checker" id="hi-button">Greeting</button>
-  <button class="greet-checker" id="bye-button">Salutation</button>
-  <hr>
-  <input id="input-firstname" placeholder="First Name">
-  <input id="input-lastname" placeholder="Last Name">
-  <p id="output">???</p>
+    <button class="greet-checker" id="hi-button">Greeting</button>
+    <button class="greet-checker" id="bye-button">Salutation</button>
+    <!-- <input type="checkbox" id="shoutify"></input>
+    <label for="shoutify">Shoutify!</label> -->
+    <label> <input type="checkbox" id="shoutify" name="upper" value="shoutify" />Shoutify</label>
+    <hr>
+    <input id="input-firstname" placeholder="First Name">
+    <input id="input-lastname" placeholder="Last Name">
+    <p id="output">???</p>
 
 </body>
 
