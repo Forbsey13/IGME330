@@ -34,17 +34,19 @@
         'use strict';
 
         const init = () => {
+            let ischecked = false;
+
             let hiButton = document.querySelector("#hi-button");
             // hiButton.addEventListener("click", function () { greet("Hello, "); });
-            hiButton.addEventListener("click", () => { greet("Hello") });
+            hiButton.addEventListener("click", () => { greet("Hello, ",ischecked) });
 
 
             let byeButton = document.querySelector("#bye-button");
             // byeButton.onclick = function () { greet("See Ya, ") };
-            byeButton.onclick = () => { greet("See Ya, ") };
+            byeButton.onclick = () => { greet("See Ya, ", ischecked) };
 
             // function greet(message) {
-            const greet = (message) => {
+            const greet = (message, checkShoutify) => {
                 let firstname = document.querySelector("#input-firstname").value.trim();
                 let lastname = document.querySelector("#input-lastname").value.trim();
 
@@ -54,21 +56,25 @@
                 if (lastname == "") {
                     lastname = "Parker";
                 }
-
-                const checkShoutify = document.querySelector("#shoutify");
-                checkShoutify.addEventListener("change", () => {
-                    if (checkShoutify.checked) {
-                        firstname = firstname.toUpperCase();
-                        lastname = lastname.toUpperCase();
-                        console.log(firstname);
-                        console.log(lastname);
-                    }
-                });
+                if (checkShoutify){
+                    firstname = firstname.toUpperCase();
+                    lastname = lastname.toUpperCase();
+                }
 
                 let output = document.querySelector("#output");
 
                 output.innerHTML = `${message} ${firstname} ${lastname}`;
             };
+
+            const checkShoutify = document.querySelector("#shoutify");
+                checkShoutify.addEventListener("change", () => {
+                    if (checkShoutify.checked) {
+                        ischecked = true;
+                    }
+                    else {
+                        ischecked = false;
+                    }
+                });
 
             document.querySelector("p").style.backgroundColor = "yellow";
             document.querySelector("p").style.color = "red";
