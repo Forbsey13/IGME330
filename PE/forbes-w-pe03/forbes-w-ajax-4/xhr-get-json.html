@@ -25,52 +25,41 @@
 
 
     <script>
-        document.querySelector("#my-button").onclick = loadXMLHR;
+        document.querySelector("#my-button").onclick = loadJsonXHR;
 
-        function loadXMLHR() {
-            const url = "data/pet-names.json";
+        function loadJsonXHR() {
+            const url = "data/simple-pet-names.json";
             const xhr = new XMLHttpRequest();
+
             xhr.onload = (e) => {
                 console.log(`In onload - HTTP Status Code = ${e.target.status}`);
-                const xml = e.target.responseText;
-                obj = JSON.parse(json);
+                const json = e.target.responseText;
+
+                let obj;
+                try {
+                    obj = JSON.parse(json);
+                }
+                catch {
+                    document.querySelector("#output").innerHTML = "json has error";
+                }
+
                 dogs = obj.dognames;
+                cats = obj.catnames;
 
-                for (var i = 0; i < dogs.length; i++) {
-                    console.log(dogs[i]);
-                }
-                
-                if (!xml) {
-                    document.querySelector("#output").innerHTML = "xml is null";
-                    return
-                }
-                const dogNames = xml.querySelector("namelist[cid='dognames']").textContent.split(",");
-                const catNames = xml.querySelector("namelist[cid='catnames']").textContent.split(",");
-                const birdNames = xml.querySelector("namelist[cid='birdnames']").textContent.split(",");
+                // for (var i = 0; i < dogs.length; i++) {
+                //     console.log(dogs[i]);
+                // }
 
-                // const text = e.target.responseText;
-                // console.log(`Success - the file length is ${text.length}`);
-                // const lines = text.split("\n");
-
-                // const dogNames = lines[0].split(",");
-                // const catNames = lines[1].split(",");
-                //let [dogNames,catNames,birdNames] = text.split("\n");
-                //dogNames = dogNames.split(",");
-                //catNames = catNames.split(",");
-
-                const dogHtml = `<ol>${dogNames.map(w => `<li>${w}</li>`).join("")}</ol>`;
-                const catHtml = `<ol>${catNames.map(w => `<li>${w}</li>`).join("")}</ol>`;
-                const birdHtml = `<ol>${birdNames.map(w => `<li>${w}</li>`).join("")}</ol>`;
+                const dogHtml = `<ol>${dogs.map(w => `<li>${w}</li>`).join("")}</ol>`;
+                const catHtml = `<ol>${cats.map(w => `<li>${w}</li>`).join("")}</ol>`;
+                //const birdHtml = `<ol>${birdNames.map(w => `<li>${w}</li>`).join("")}</ol>`;
 
                 const html = `
                 <h3>Dog Names</h3>
                 ${dogHtml}  
                 <h3>Cat Names</h3>
                 ${catHtml}
-                <h3>Bird Names</h3>
-                ${birdHtml}
                 `;
-                //const html = `<ol>${words.map(w => `<li>${w}</li>`).join("")}</ol>`;
 
                 document.querySelector("#output").innerHTML = html;
             };
