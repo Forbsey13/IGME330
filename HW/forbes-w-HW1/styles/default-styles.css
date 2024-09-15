@@ -1,5 +1,6 @@
 body {
     font-family: "Nova Square";
+    overflow: hidden;
 }
 
 #output {
@@ -26,7 +27,9 @@ body {
         flex-direction: column;
     }
 
-    html, body, .container {
+    html,
+    body,
+    .container {
         height: 100%;
         margin: 0;
     }
@@ -43,6 +46,7 @@ body {
 
     #output {
         text-align: center;
+        font-size: 2rem;
     }
 }
 
@@ -50,6 +54,15 @@ body {
     h1 {
         font-size: 3rem;
         background-color: #23D160;
+        background: radial-gradient(#23D160,  #168d40 80%);
+    }
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin: 1rem;
     }
 
     #babble-1 {
@@ -66,7 +79,11 @@ body {
 
     body {
         color: darkgray;
-        font-size: 2rem;
+        font-size: 1rem;
+    }
+    
+    #output {
+        font-size: 3rem;
     }
 }
 
@@ -78,10 +95,14 @@ body {
 
     h1 {
         background-color: #FF3860;
+        background: linear-gradient(180deg, #FF3860 0%,#c02947 50%, #801c30 100%);
     }
 
     .container {
-        display: block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
         margin: 1rem;
     }
 
@@ -94,6 +115,18 @@ body {
     h1 {
         font-size: 4rem;
         /* background-color: teal; */
-        background: linear-gradient(90deg, rgb(0,128,128) 0%, rgb(0,100,100) 50%, rgba(0,50,50) 100%);
+        background: linear-gradient(90deg, rgb(0, 128, 128) 0%, rgb(0, 100, 100) 50%, rgba(0, 50, 50) 100%);
+    }
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        /* margin: 1rem; */
+    }
+
+    #output {
+        font-size: 3.5rem;
     }
 }

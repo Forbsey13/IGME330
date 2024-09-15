@@ -5,9 +5,9 @@ let words2 = [];
 let words3 = [];
 
 const generate = (times) => {
-    let str;
+    let str = "";
     for (let i = 0; i < times; i++) {
-        str += `${randomElement(words1)} ${randomElement(words2)} ${randomElement(words3)}\n`;
+        str += `${randomElement(words1)} ${randomElement(words2)} ${randomElement(words3)}<br>`;
     }
     document.querySelector("#output").innerHTML = str;
 };
@@ -22,25 +22,25 @@ const click = () => {
     generate(1); //Load with 1
 };
 
-const loadBabble = (e) => {
+const babbleLoaded = (e) => {
     const json = JSON.parse(e.target.responseText);
     words1 = json.words1;
     words2 = json.words2;
-    words3 = json.wrods3;
+    words3 = json.words3;
     click(); //Run after filling arrays
 };
 
 
-const main = () => {
+const loadBabble = () => {
     const url = "data/babble-data.json";
     const xhr = new XMLHttpRequest();
 
     xhr.onload = (e) => {
-        loadBabble(e);
+        babbleLoaded(e);
     }
 
     xhr.open("GET", url);
     xhr.send();
 };
 
-window.onload = main;
+window.onload = loadBabble;
