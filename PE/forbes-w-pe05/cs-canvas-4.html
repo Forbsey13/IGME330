@@ -46,6 +46,7 @@
             return Math.floor(Math.random() * (max - min + 1)) + min;
         }
 
+
         const drawRandomRect = (ctx) => {
             ctx.save();
             ctx.beginPath();
@@ -57,15 +58,11 @@
             ctx.restore();
         };
 
-        const update = () => {
-            if (paused) {
-                return;
-            }
+        function update(){
+            if(paused) return;
             requestAnimationFrame(update);
-            if (createRectangles) {
-                drawRandomRect(ctx);
-            }
-        };
+            if(createRectangles) drawRandomRect(ctx);
+        }
 
         function canvasClicked(e){
             let rect = e.target.getBoundingClientRect();
@@ -227,27 +224,28 @@
             ctx.closePath();
 
             update();
+            setupUI();
         }
     </script>
 </head>
 
 <body>
     <canvas width="640" height="480">
-        Get a real browser!
-    </canvas>
+		Get a real browser!
+	</canvas>
     <section>
         <button id="btnPlay">Play</button>
         <button id="btnPause">Pause</button>
-    </section>
-    <section>
+      </section>
+      <section>
         <span>
-            <input type="checkbox" id="cbRectangles" checked>
-            <label for="cbRectangles">Rectangles</label>
+          <input type="checkbox" id="cbRectangles" checked>
+          <label for="cbRectangles">Rectangles</label>
         </span>
-    </section>
-    <section>
+      </section>
+      <section>
         <p>Click on the screen to "spraypaint" rectangles (you probably want the screensaver to be paused)</p>
-    </section>
+      </section>
 </body>
 
 </html>
