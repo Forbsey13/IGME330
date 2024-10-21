@@ -5,9 +5,9 @@ import { Sprite } from './sprite.js';
 
 let avData;
 
-const DEFAULTS = Object.freeze({
-    sound1: "./media/Hollow Knight OST - Greenpath.mp3"
-});
+// const DEFAULTS = Object.freeze({
+//     sound1: "./media/Hollow Knight OST - Greenpath.mp3"
+// });  
 
 const preload = async () => {
     alert("Audio may not play on the first click.\nPlease click the button again to start the audio.\n\nRecommended screen width: 1080+");

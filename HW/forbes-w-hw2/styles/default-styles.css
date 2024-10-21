@@ -56,7 +56,7 @@ main {
 #progress-bar {
     width: 100%;
     height: 10px;
-    background-color: rgb(225, 227, 255);
+    background-color: rgb(187, 231, 250);
     border-radius: 0px;
     outline: none;
     margin: 0;
@@ -124,14 +124,14 @@ button {
     display: flex;
     flex-direction: row;
     margin: 10px;
-    background-color: rgb(136, 164, 246);
+    background-color: rgb(28, 104, 145);
     height: 6em;
     border-radius: 10px;
     cursor: pointer;
 }
 
 .track:hover {
-    background-color: rgb(136, 136, 238);
+    background-color: rgb(23, 83, 116);
 }
 
 .track img {
@@ -163,7 +163,7 @@ button {
 #visualizer-controls,
 #bass-controls,
 #treble-controls {
-    background-color: rgb(177, 177, 255);
+    background-color: rgb(52, 106, 137);
     border-radius: 10px;
     margin: 10px;
     padding: 15px;
@@ -216,7 +216,7 @@ footer {
 }
 
 input:checked+.slider {
-    background-color: #2196F3;
+    background-color: #0b485c;
 }
 
 input:checked+.slider:before {
