@@ -12,34 +12,34 @@
     },
     "data": [
         {
-            "name": "Natlan Battle Theme",
-            "author": "HoYo-Mix",
-            "image": "media/Natlan Battle Theme.jpg",
-            "path": "media/Natlan Battle Theme.mp3"
+            "name": "Greenpath",
+            "author": "Hollow-Knight",
+            "image": "media/Greenpath_2.webp",
+            "path": "media/Hollow Knight OST - Greenpath.mp3"
         },
         {
-            "name": "Raiden Shogun Trailer Theme",
-            "author": "HoYo-Mix",
-            "image": "media/Raiden Shogun Trailer Theme.jpg",
-            "path": "media/Raiden Shogun Trailer Theme.mp3"
+            "name": "City of Tears",
+            "author": "Hollow-Knight",
+            "image": "media/CityOfTearsBackground.jpg",
+            "path": "media/Hollow Knight OST - City of Tears.mp3"
         },
         {
-            "name": "Sumeru Port Ormos OST",
-            "author": "HoYo-Mix",
-            "image": "media/Sumeru Port Ormos Theme.jpg",
-            "path": "media/Sumeru Port Ormos Theme.mp3"
+            "name": "Hornet",
+            "author": "Hollow-Knight",
+            "image": "media/HornetBackground.jpg",
+            "path": "media/Hollow Knight OST - Hornet.mp3"
         },
         {
-            "name": "New Adventure Theme",
-            "author": "Unknown, maybe 330 course creator. pls credit source :>",
-            "image": "",
-            "path": "media/New Adventure Theme.mp3"
+            "name": "Reflection Theme",
+            "author": "Hollow-Knight",
+            "image": "media/HotSpringBackground.jpg",
+            "path": "media/Hollow Knight OST - Reflection.mp3"
         },
         {
-            "name": "[Testing] Pink Noise",
-            "author": "DigitalSpa",
-            "image": "media/Pink Noise.webp",
-            "path": "media/Pink Noise.mp3"
+            "name": "Mantis Lords",
+            "author": "Hollow-Knight",
+            "image": "media/Mantis_Lords_1.webp",
+            "path": "media/Hollow Knight OST - Mantis Lords.mp3"
         }
     ]
 }
