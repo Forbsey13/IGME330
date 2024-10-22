@@ -10,9 +10,9 @@ const setupCanvas = (canvasElement, analyserNodeRef) => {
     canvasHeight = canvasElement.height;
 
     gradient = utils.getLinearGradient(ctx, 0, 0, 0, canvasHeight, [
-        { percent: 0, color: "#b3e5fc" },
-        { percent: 0.5, color: "#ce93d8" },
-        { percent: 1, color: "#fff59d" }
+        { percent: 0, color: "#5ad1bd" },
+        { percent: 0.5, color: "#4ea9b5" },
+        { percent: 1, color: "#34708c" }
     ]);
 
     analyserNode = analyserNodeRef;
@@ -56,7 +56,7 @@ const draw = (params = {}) => {
 
         let gradient = ctx.createLinearGradient(0, canvasHeight, 0, 0);
         gradient.addColorStop(0, 'rgba(255,255,255,0.85)');
-        gradient.addColorStop(1, 'rgba(255,105,180,0.85)');
+        gradient.addColorStop(1, 'rgba(37, 121, 128,0.85)');
 
         ctx.fillStyle = gradient;
         ctx.strokeStyle = 'rgba(0,0,0,0.15)';
@@ -90,13 +90,13 @@ const draw = (params = {}) => {
             let circleRadius = Math.max((percent + pulse) * maxRadius, 0);
 
             ctx.beginPath();
-            ctx.fillStyle = utils.makeColor(255, 150, 150, 0.4 - percent / 3.0);
+            ctx.fillStyle = utils.makeColor(38, 112, 112, 0.4 - percent / 3.0);
             ctx.arc(centerX, centerY, circleRadius, 0, 2 * Math.PI, false);
             ctx.fill();
             ctx.closePath();
 
             ctx.beginPath();
-            ctx.fillStyle = utils.makeColor(135, 206, 250, 0.15 - percent / 10.0);
+            ctx.fillStyle = utils.makeColor(30, 100, 100, 0.15 - percent / 10.0);
             ctx.arc(centerX, centerY, Math.max(circleRadius * 1.6 + pulse * 20, 0), 0, 2 * Math.PI, false);
             ctx.fill();
             ctx.closePath();
@@ -104,7 +104,7 @@ const draw = (params = {}) => {
             ctx.save();
 
             ctx.beginPath();
-            ctx.fillStyle = utils.makeColor(255, 255, 100, 0.6 - percent / 5.0);
+            ctx.fillStyle = utils.makeColor(20, 85, 85, 0.6 - percent / 5.0);
             ctx.arc(centerX, centerY, Math.max(circleRadius * 0.5 - pulse * 10, 0), 0, 2 * Math.PI, false);
             ctx.fill();
             ctx.closePath();

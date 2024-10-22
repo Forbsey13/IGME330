@@ -1,0 +1,8 @@
+2 Audio Effect Nodes:
+
+
+Sprite Class' Name (What it does/looks like):
+
+What went into App Data:
+
+How I Improved on pe-08:

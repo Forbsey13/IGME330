@@ -1,20 +1,25 @@
 html,
 body {
-    margin: 0px;
-    padding: 0px;
-    background-color: rgb(180, 220, 255);
+    margin: 1px;
+    padding: 5px;
+    background-color: rgb(59, 222, 216);
     height: 100vh;
+    max-width: 94%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
 }
 
 main {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: .7fr .3fr;
+    grid-template-columns: 1fr;
+    grid-template-rows: .2fr .5fr .3fr;
     grid-template-areas:
-        "canvas canvas canvas tracks"
-        "controls controls controls controls";
-    gap: 10px;
-    padding: 10px;
+        "canvas"
+        "controls"
+        "tracks";
+    gap: 15px;
+    padding: 15px;
     height: 100vh;
 }
 
@@ -27,6 +32,7 @@ main {
 .tracks {
     grid-area: tracks;
     justify-content: space-evenly;
+    justify-content: center;
 }
 
 .controls {
@@ -38,7 +44,7 @@ main {
 .canvas,
 .tracks,
 .controls {
-    background-color: rgb(225, 227, 255);
+    background-color: rgb(97, 165, 183);
     border-radius: 10px;
 }
 
@@ -56,7 +62,7 @@ main {
 #progress-bar {
     width: 100%;
     height: 10px;
-    background-color: rgb(187, 231, 250);
+    background-color: rgb(222, 246, 250);
     border-radius: 0px;
     outline: none;
     margin: 0;
@@ -117,15 +123,18 @@ button {
 }
 
 #track-selection {
-    width: 100%;
+    width: 100%;    
+    display: flex;
+    justify-content: space-between;
+
 }
 
 .track {
     display: flex;
     flex-direction: row;
     margin: 10px;
-    background-color: rgb(28, 104, 145);
-    height: 6em;
+    background-color: rgb(55, 126, 152);
+    height: 12em;
     border-radius: 10px;
     cursor: pointer;
 }
@@ -135,7 +144,7 @@ button {
 }
 
 .track img {
-    border-radius: 50%;
+    border-radius: 60%;
     aspect-ratio: 1/1;
     margin: 5%;
 }
@@ -163,7 +172,7 @@ button {
 #visualizer-controls,
 #bass-controls,
 #treble-controls {
-    background-color: rgb(52, 106, 137);
+    background-color: rgb(55, 126, 152);
     border-radius: 10px;
     margin: 10px;
     padding: 15px;
