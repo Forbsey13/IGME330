@@ -21,7 +21,6 @@ const getLinearGradient = (ctx, startX, startY, endX, endY, colorStops) => {
 };
 
 const goFullscreen = (element) => {
-    // fun fact: lint standards require else if to be in new line
     if (element.requestFullscreen) {
         element.requestFullscreen();
     }

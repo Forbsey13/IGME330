@@ -67,7 +67,7 @@ const setupTracks = (trackElement) => {
         div2.appendChild(p);
 
         div.appendChild(div2);
-        trackElement.appendChild(div);
+        trackElement.appendChild(div);   
     }
 
     // start the first sprite rotation
@@ -113,12 +113,12 @@ const setupUI = (canvasElement) => {
 
         if (e.target.dataset.playing == "no") {
             audio.playCurrentSound();
-            e.target.dataset.playing = "yes"; //our css will set the text to "Pause", no it will not
+            e.target.dataset.playing = "yes"; 
             playButtonImage.src = utils.TOGGLE_BUTTONS.PLAY;
         }
         else {
             audio.pauseCurrentSound();
-            e.target.dataset.playing = "no";// our CSS will set the text to "Play", no it will not
+            e.target.dataset.playing = "no";
             playButtonImage.src = utils.TOGGLE_BUTTONS.PAUSE;
         }
     };
@@ -172,9 +172,6 @@ const loop = () => {
     updateProgress();
 }
 
-/**
- * update the progress bar and label
- */
 const updateProgress = () => {
     const progressBar = document.querySelector("#progress-bar");
     const progressLabel = document.querySelector("#progress-label");
