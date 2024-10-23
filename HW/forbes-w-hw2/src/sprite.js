@@ -61,7 +61,7 @@ class CanvasSprite {
         ctx.save();
         ctx.fillStyle = this.color;
         ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size * this.scale, 0, 2 * Math.PI);
+        ctx.arc(this.x, this.y, this.size * this.scale * 2, 0, 2 * Math.PI);    
         ctx.fill();
         ctx.restore();
     }

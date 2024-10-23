@@ -1,5 +1,4 @@
-let audioCtx;
-let element, sourceNode, analyserNode, gainNode, bassFilter, trebleFilter;
+let audioCtx, element, sourceNode, analyserNode, gainNode, bassFilter, trebleFilter;
 
 const DEFAULTS = Object.freeze({
     gain: .5,

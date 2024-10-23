@@ -1,8 +1,13 @@
 2 Audio Effect Nodes:
-
+bass, treble
 
 Sprite Class' Name (What it does/looks like):
+Rotates the song thats playing
+Adds the 3 circles that bounce around the scene
 
 What went into App Data:
+title, draw parameters, audio file data (name,author,image,path)
 
 How I Improved on pe-08:
+I would say I deserve at least a 10% since the page is well formatted and easy to follow. 
+The only major downside is having to scroll up and down.

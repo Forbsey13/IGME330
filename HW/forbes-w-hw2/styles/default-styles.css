@@ -1,13 +1,16 @@
 html,
 body {
-    margin: 1px;
-    padding: 5px;
+    /* margin: 3px; */
+    /* padding: 5px; */
     background-color: rgb(59, 222, 216);
     height: 100vh;
-    max-width: 94%;
-    text-align: center;
+    width: 90%;
     display: flex;
     justify-content: center;
+}
+
+h1 {
+    text-align: center;
 }
 
 main {
@@ -21,6 +24,7 @@ main {
     gap: 15px;
     padding: 15px;
     height: 100vh;
+    max-width: 100%;
 }
 
 .canvas {
@@ -46,6 +50,13 @@ main {
 .controls {
     background-color: rgb(97, 165, 183);
     border-radius: 10px;
+    display: flex;
+}
+
+.tracks {
+    display: flex;
+    justify-content: center;
+
 }
 
 #playback-controls {
@@ -122,11 +133,11 @@ button {
     align-items: center;
 }
 
-/* #track-selection {
+#track-selection {
     width: 100%;
     display: flex;
     justify-content: space-evenly;
-} */
+}
 
 .track {
     display: flex;
@@ -137,6 +148,7 @@ button {
     height: 10em;
     border-radius: 10px;
     cursor: pointer;
+    width: 100%;
 }
 
 .track:hover {
@@ -144,6 +156,7 @@ button {
 }
 
 .track img {
+    display:flex;
     border-radius: 60%;
     aspect-ratio: 1/1;
     margin: 5%;
@@ -155,7 +168,7 @@ button {
     justify-content: center;
     margin-left: 2%;
     margin-right: 5%;
-    font-size: 150%;
+    /* font-size: 150%; */
 }
 
 .remove-text-flairs {
