@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Add custom markers in Mapbox GL JS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" />
+    <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.js"></script>
+    <link href="https://api.tiles.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.css" rel="stylesheet" />
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #map {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+        }
+
+        <!-- code from step 5-3 will go here !-->< !--code from step 7 will go here !-->
+    </style>
+</head>
+
+<body>
+    <div id="map"></div>
+
+    <script>
+        mapboxgl.accessToken = 'pk.eyJ1IjoiZm9yYnNleTEzIiwiYSI6ImNtM2FubTNxeTE1YmEyanB4M2Vqc3A3ZWgifQ.7G1_3Jelxj02WuYzgsD1dg';
+
+        const geojson = {
+            type: 'FeatureCollection',
+            features: [
+                {
+                    type: 'Feature',
+                    geometry: {
+                        type: 'Point',
+                        coordinates: [-77.032, 38.913]
+                    },
+                    properties: {
+                        title: 'Mapbox',
+                        description: 'Washington, D.C.'
+                    }
+                },
+                {
+                    type: 'Feature',
+                    geometry: {
+                        type: 'Point',
+                        coordinates: [-122.414, 37.776]
+                    },
+                    properties: {
+                        title: 'Mapbox',
+                        description: 'San Francisco, California'
+                    }
+                }
+            ]
+        };
+
+        const map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/light-v11',
+            center: [-96, 37.8],
+            zoom: 3
+        });
+
+        // add markers to map
+        for (const feature of geojson.features) {
+
+            // code from step 5-1 will go here
+
+            // make a marker for each feature and add to the map
+            new mapboxgl.Marker().setLngLat(feature.geometry.coordinates).addTo(map);  // Replace this line with code from step 5-2
+
+            //code from step 6 will go here
+        }
+
+    </script>
+</body>
+
+</html>
