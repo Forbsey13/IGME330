@@ -12,28 +12,34 @@
     },
     "data": [
         {
-            "name": "Passing Memories",
-            "author": "HOYO-MiX, Faouzia",
-            "image": "assets/media/Passing Memories.jpeg",
-            "path": "assets/audio/Passing Memories.mp3"
+            "name": "Greenpath",
+            "author": "Hollow-Knight",
+            "image": "./media/Greenpath_2.webp",
+            "path": "./media/Hollow Knight OST - Greenpath.mp3"
         },
         {
-            "name": "Hope Is the Thing With Feathers",
-            "author": "Robin, HOYO-MiX, Chevy",
-            "image": "assets/media/Hope Is the Thing With Feathers.jpeg",
-            "path": "assets/audio/Hope Is the Thing With Feathers.mp3"
+            "name": "City of Tears",
+            "author": "Hollow-Knight",
+            "image": "./media/CityOfTearsBackground.jpg",
+            "path": "./media/Hollow Knight OST - City of Tears.mp3"
         },
         {
-            "name": "No Ceiling",
-            "author": "HOYO-MiX",
-            "image": "assets/media/No Ceiling.jpeg",
-            "path": "assets/audio/No Ceiling.mp3"
+            "name": "Hornet",
+            "author": "Hollow-Knight",
+            "image": "./media/newHornet.jpg",
+            "path": "./media/Hollow Knight OST - Hornet.mp3"
         },
         {
-            "name": "pinKing",
-            "author": "HOYO-MiX, Sān-Z",
-            "image": "assets/media/pinKing.jpeg",
-            "path": "assets/audio/pinKing.mp3"
+            "name": "Reflection Theme",
+            "author": "Hollow-Knight",
+            "image": "./media/HotSpringBackground.jpg",
+            "path": "./media/Hollow Knight OST - Reflection.mp3"
+        },
+        {
+            "name": "Mantis Lords",
+            "author": "Hollow-Knight",
+            "image": "./media/Mantis_Lords_1.webp",
+            "path": "./media/Hollow Knight OST - Mantis Lords.mp3"
         }
     ]
 }

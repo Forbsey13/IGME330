@@ -8,7 +8,7 @@ const load = async (): Promise<void> => {
         main.init();
     }
     catch {
-        // ignore
+        
     }
 }
 
