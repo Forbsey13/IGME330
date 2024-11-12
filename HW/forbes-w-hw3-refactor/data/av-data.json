@@ -1,0 +1,39 @@
+{
+    "title": "Audio Visualizer",
+    "drawParams": {
+        "visualizerType": true,
+        "showSprites": true,
+        "showGradient": true,
+        "showBars": true,
+        "showCircles": true,
+        "showNoise": false,
+        "showInvert": false,
+        "showEmboss": false
+    },
+    "data": [
+        {
+            "name": "Passing Memories",
+            "author": "HOYO-MiX, Faouzia",
+            "image": "assets/media/Passing Memories.jpeg",
+            "path": "assets/audio/Passing Memories.mp3"
+        },
+        {
+            "name": "Hope Is the Thing With Feathers",
+            "author": "Robin, HOYO-MiX, Chevy",
+            "image": "assets/media/Hope Is the Thing With Feathers.jpeg",
+            "path": "assets/audio/Hope Is the Thing With Feathers.mp3"
+        },
+        {
+            "name": "No Ceiling",
+            "author": "HOYO-MiX",
+            "image": "assets/media/No Ceiling.jpeg",
+            "path": "assets/audio/No Ceiling.mp3"
+        },
+        {
+            "name": "pinKing",
+            "author": "HOYO-MiX, Sān-Z",
+            "image": "assets/media/pinKing.jpeg",
+            "path": "assets/audio/pinKing.mp3"
+        }
+    ]
+}
