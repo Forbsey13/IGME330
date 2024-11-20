@@ -1,77 +1,67 @@
-import { useState, useEffect } from "react";
-import './App.css'
-import {loadXHR} from './ajax'
+import { useEffect, useState, useMemo } from "react";
+import { loadXHR } from "./ajax";
 import { readFromLocalStorage, writeToLocalStorage } from "./storage";
+import { Header } from "./Header";
+import AmiiboSearchUI from "./AmiiboSearchUI";
+import AmiiboList from "./AmiiboList";
+import Footer from "./Footer";
+import './App.css'
 
 // app "globals" and utils
 const baseurl = "https://www.amiiboapi.com/api/amiibo/?name=";
 
-
-
-
-
-const searchAmiibo = (name, callback) => {
-  loadXHR( `${baseurl}${name}`, callback);
-};
-
-
-
-
-// // call searchAmiibo() with "mario" and our callback function
-// searchAmiibo("mario", parseAmiiboResult); // DONE
-
 const App = () => {
-
-  const parseAmiiboResult = xhr => {
-  
-    // get the `.responseText` string
-    const responseString = xhr.responseText;
-  
-    //console.log(responseString);
-   
-    // declare a json variable
-    let json = JSON;
-   
-    // try to parse the string into a json object
-    json = json.parse(responseString);
-
-    setResults(json.amiibo);
-  
-  };
-
-  const [term,setTerm] = useState("");
-  const [results,setResults] = useState([]);
+  const savedTerm = useMemo(() => readFromLocalStorage("term") || "", []);
+  const [term, setSearchTerm] = useState(savedTerm);
+  const [results, setResults] = useState([]);
 
   useEffect(() => {
     writeToLocalStorage("term", term);
-  });
+  }, [term]);
+
+  const searchAmiibo = (name) => {
+    loadXHR(`${baseurl}${name}`, (xhr) => parseAmiiboResult(xhr));
+  };
+
+  const parseAmiiboResult = (xhr) => {
+    // get the `.responseText` string
+    const responseText = xhr.responseText;
+
+    // declare a json variable
+    let json;
+
+    // try to parse the string into a json object
+    try {
+      json = JSON.parse(responseText);
+    } catch (error) {
+      console.log("There was an error parsing JSON", error);
+      setResults([]);
+      return;
+    }
+
+    if (json.amiibo) {
+      setResults(json.amiibo);
+    } else {
+      setResults([]);
+    }
+  };
 
   return <>
-    <header>
-      <h1>Amiibo Finder</h1>
-    </header>
+    <Header/>
     <hr />
     <main>
-      <button onClick={()=>searchAmiibo(term,parseAmiiboResult) } >Search</button>
-      <label>
-        Name: 
-        <input value={term} onChange={(e)=>setTerm(e.target.value) } />
-      </label>
+    <AmiiboSearchUI
+          term={term}
+          setTerm={setSearchTerm}
+          searchAmiibo={searchAmiibo}
+        />
+      <AmiiboList array={results} />
     </main>
     <hr />
-    {results.map(amiibo => (
-        <span key={amiibo.head + amiibo.tail} style={{color:"green"}}>
-          <h4>{amiibo.name}</h4>
-          <img 
-            width="100" 
-            alt={amiibo.character}
-            src={amiibo.image}
-          />
-        </span>
-      ))}
-    <footer>
-      <p>&copy; 2023 Ace Coder</p>
-    </footer>
+    <Footer
+      name="Ace Coder"
+      year={new Date().getFullYear()}
+    />
   </>;
 };
 
