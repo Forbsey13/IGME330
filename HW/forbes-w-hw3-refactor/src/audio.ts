@@ -1,4 +1,3 @@
-
 import { Defaults, BiquadDefaults } from "./enums/audio-defaults.enum";
 
 let audioCtx: AudioContext;

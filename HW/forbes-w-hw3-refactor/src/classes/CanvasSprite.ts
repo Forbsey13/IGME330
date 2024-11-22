@@ -5,16 +5,14 @@ export class CanvasSprite {
     color: string;
     scale: number;
     velocity: { x: number, y: number };
-    image: HTMLImageElement;
 
-    constructor(x: number, y: number, size: number, color: string, scale: number = 1,image : HTMLImageElement) {
+    constructor(x: number, y: number, size: number, color: string, scale: number = 1) {
         this.x = x;
         this.y = y;
         this.size = size;
         this.color = color;
         this.scale = scale;
         this.velocity = { x: Math.random() * 2 - 1, y: Math.random() * 2 - 1 };
-        this.image = image;
     }
 
     update(audioData: Uint8Array, canvasWidth: number, canvasHeight: number): void {

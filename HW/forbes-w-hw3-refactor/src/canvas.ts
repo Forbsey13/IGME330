@@ -27,13 +27,10 @@ const setupCanvas = (canvasElement: HTMLCanvasElement, analyserNodeRef: Analyser
     analyserNode = analyserNodeRef;
     audioData = new Uint8Array(analyserNode.fftSize / 2);
 
-    let spriteImg;
-    spriteImg.src = "../media/geo1.jpg";
-
     // create sprites
-    sprite1 = new CanvasSprite(100, 100, 10, 'rgba(255, 0, 0, 0.2)', 1, spriteImg);
-    sprite2 = new CanvasSprite(100, 100, 10, 'rgba(0, 0, 255, 0.2)', 0.5, spriteImg);
-    sprite3 = new CanvasSprite(100, 100, 10, 'rgba(0, 255, 0, 0.2)', 0.25, spriteImg);
+    sprite1 = new CanvasSprite(100, 100, 10, 'rgba(255, 0, 0, 0.2)', 1);
+    sprite2 = new CanvasSprite(100, 100, 10, 'rgba(0, 0, 255, 0.2)', 0.5);
+    sprite3 = new CanvasSprite(100, 100, 10, 'rgba(0, 255, 0, 0.2)', 0.25);
 }
 
 const draw = (params: DrawParams = {

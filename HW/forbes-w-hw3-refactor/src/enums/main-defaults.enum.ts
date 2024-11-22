@@ -1,3 +1,3 @@
 export enum Defaults {
-    SOUND_ONE = "./assets/audio/Passing Memories.mp3"
+    SOUND_ONE = "../../media/Hollow Knight OST - Greenpath.mp3"
 }

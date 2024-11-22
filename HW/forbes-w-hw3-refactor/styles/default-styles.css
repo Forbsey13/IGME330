@@ -1,5 +1,5 @@
 html {
-    background-color: rgb(200, 225, 255);
+    background-color: rgb(29, 87, 84);
 }
 
 /* Override the section's uneven padding in Bulma */
@@ -22,11 +22,13 @@ html {
 /* Add ponter and hover functionality to tracks, disk image */
 .tracks {
     cursor: pointer;
-    background-color: rgb(192, 196, 255);
+    background-color: rgb(64, 175, 164);
+    border-radius: 6px;
+
 }
 
 .tracks:hover {
-    background-color: rgb(136, 136, 238);
+    background-color: rgb(57, 152, 143);
 }
 
 #playback-controls img {
@@ -53,7 +55,7 @@ canvas {
 #progress-bar {
     width: 100%;
     height: 10px;
-    background-color: rgb(225, 227, 255);
+    background-color: rgb(205, 251, 253);
     border-radius: 0;
     outline: none;
     margin: 0;
@@ -67,8 +69,7 @@ canvas {
     /* Tried using is-justify-content-space-between in the class but it didnt work */
     justify-content: space-between;
 
-    border-bottom-left-radius: 6px;
-    border-bottom-right-radius: 6px;
+    border-radius: 6px;
 }
 
 #controls-section {
@@ -77,24 +78,25 @@ canvas {
 
 #visualizer-controls {
     justify-content: space-around;
-    background-color: rgb(192, 196, 255);
+    background-color: rgb(64, 175, 164);
 }
 
 #bass-controls,
 #treble-controls {
     flex-direction: column;
-    background-color: rgb(192, 196, 255);
+    background-color: rgb(64, 175, 164);
 }
 
 #tracks {
-    background-color: rgb(225, 227, 255);
+    background-color: rgb(43, 118, 111);
+
+    border-radius: 6px;
 }
 
 #controls {
-    background-color: rgb(225, 227, 255);
+    background-color: rgb(43, 118, 111);
 }
 
 button {
     background-color: rgba(0, 0, 0, 0) !important;
 }
-
