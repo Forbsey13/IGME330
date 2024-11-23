@@ -1,1 +1,6 @@
-_Stuff Here_
+Typescript
+
+Adjusted to the selector to fit the theme better
+Refined treble and bass controls
+Added various visualisations choices let the user affect the canvas
+Changed colors to better match the Hollow Knight general color scheme
