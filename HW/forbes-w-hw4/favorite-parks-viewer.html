@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Favourites Park Viewer</title>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=yes">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <script src="./src/park-viewer.js" type="module"></script>
+</head>
+
+<body>
+    <header class="hero is-small is-info is-bold p-2">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title is-flex is-align-items-center">
+                    Favourites Park Viewer
+                    <a class="button is-link is-small ml-2" href="./index.html">
+                        <span class="icon">
+                            <i class="fas fa-th-large"></i>
+                        </span>
+                        <span>View App</span>
+                    </a>
+                </h1>
+                <h2 class="subtitle">See which parks are the most popular!</h2>
+            </div>
+        </div>
+    </header>
+
+    <main class="section has-background-info pb-5">
+        <div class="container">
+            <div class="box">
+                <h2 class="title is-5 is-underlined is-bold">INCREMENT/DECREMENT A PARK COUNT (FOR TESTING PURPOSES
+                    ONLY).</h2>
+                <div class="field">
+                    <label class="label">Park ID</label>
+                    <div class="control">
+                        <input class="input" type="text" id="input-park-id" placeholder="Enter Park ID">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="checkbox">
+                        <input type="checkbox" id="checkbox-count-type" name="count-type" value="decrement">
+                        Decrement?
+                    </label>
+                </div>
+                <div class="field">
+                    <button id="button-park-counter" class="button is-info">
+                        <span class="icon"><i class="fas fa-paper-plane"></i></span>
+                        <span>Send Park ID to Server</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="container mt-5">
+            <div class="box">
+                <div class="content">
+                    <h2 class="title is-5 is-underlined is-bold">VIEW PARK POPULARITY</h2>
+                    <ol id="park-list"></ol>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer has-background-info has-text-centered has-text-light p-1">&copy; 2024 Jason Chen</footer>
+</body>
+
+</html>
