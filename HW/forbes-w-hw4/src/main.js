@@ -33,14 +33,14 @@ const setupUI = () => {
 		map.flyTo(lnglatUSA);
 	};
 
-	// event listener for favourite and delete buttons
+	// event listener for favorite and delete buttons
 	document.querySelector("#details-2").addEventListener("click", (event) => {
 		const button = event.target.closest("button");
 		if (!button) return;
 
 		const { id, action } = button.dataset;
-		if (action === "favourite") {
-			handleFavourite(id);
+		if (action === "favorite") {
+			handleFavorite(id);
 		} else if (action === "delete") {
 			handleDelete(id);
 		}
@@ -52,18 +52,18 @@ const setupUI = () => {
 const showFeatureDetails = (id) => {
 	const feature = getFeatureById(id);
 
-	// check if selected is favourited
-	const favourited = storage.readFromLocalStorage().includes(id);
+	// check if selected is favorited
+	const favorited = storage.readFromLocalStorage().includes(id);
 
 	// title
 	document.querySelector("#details-1").innerHTML = `Info for ${feature.properties.title}`;
 
-	// address, phone, website, favourite, delete
+	// address, phone, website, favorite, delete
 	document.querySelector("#details-2").innerHTML = `
 		<p><strong>Address:</strong> ${feature.properties.address}</p>
 		<p><strong>Phone:</strong> <a href="tel:${feature.properties.phone}">${feature.properties.phone}</a></p>
 		<p><strong>Website:</strong> <a href="${feature.properties.url}" target="_blank">${feature.properties.url}</a></p>
-		${loadButtons(id, favourited)}
+		${loadButtons(id, favorited)}
 	`;
 
 	// description
@@ -78,10 +78,10 @@ const refreshFavorites = () => {
 	const favoritesContainer = document.querySelector("#favorites-list");
 	favoritesContainer.innerHTML = "";
 
-	// get favourites from local storage
-	const favourites = storage.readFromLocalStorage();
+	// get favorites from local storage
+	const favorites = storage.readFromLocalStorage();
 
-	for (const id of favourites) {
+	for (const id of favorites) {
 		favoritesContainer.appendChild(createFavoriteElement(id));
 	}
 };
@@ -108,14 +108,14 @@ const createFavoriteElement = (id) => {
 	return a;
 };
 
-const loadButtons = (id, favourited) => {
+const loadButtons = (id, favorited) => {
 	return `
 	<div class="buttons">
-		<button data-id="${id}" data-action="favourite" class="button is-info" ${favourited ? "disabled" : ""}>
+		<button data-id="${id}" data-action="favorite" class="button is-info" ${favorited ? "disabled" : ""}>
 			<span class="icon"><i class="fas fa-star"></i></span>
-			<span>Favourite</span>
+			<span>Favorite</span>
 		</button>
-		<button data-id="${id}" data-action="delete" class="button is-danger" ${favourited ? "" : "disabled"}>
+		<button data-id="${id}" data-action="delete" class="button is-danger" ${favorited ? "" : "disabled"}>
 			<span class="icon"><i class="fas fa-trash"></i></span>
 			<span>Delete</span>
 		</button>
@@ -123,7 +123,7 @@ const loadButtons = (id, favourited) => {
 	`;
 };
 
-const handleFavourite = (id) => {
+const handlefavorite = (id) => {
 	storage.writeToLocalStorage(String(id));
 	firebase.updateLikeCount(String(id), true);
 	showFeatureDetails(id);

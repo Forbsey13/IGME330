@@ -1,5 +1,5 @@
 const storeName = 'nys-state-buddy';
-const initData = [ "p142" ];
+const initData = ["p142"];
 
 const loadJSONFromLocalStorage = () => {
     // get data
@@ -15,7 +15,7 @@ const loadJSONFromLocalStorage = () => {
     try {
         json = JSON.parse(string);
         if (!Array.isArray(json)) throw new Error('Stored data is not an array');
-    } 
+    }
     catch (error) {
         console.log(`ERROR: ${error} with string: ${string}`);
         json = [...initData];
