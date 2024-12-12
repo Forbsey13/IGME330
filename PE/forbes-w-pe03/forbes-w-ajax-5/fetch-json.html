@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>XHR - Load JSON</title>
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h2>XHR - Load JSON File</h2>
+    <p>The <code>pet-names.txt</code> file contains popular dog and cat pet names, separated by commas.</p>
+    <p>Note that because XHR is loading a local file, this and the other examples will have to be run off a web server
+        rather than from your computer's hard drive (e.g. banjo.rit.edu or VSCode's liveserver etc)</p>
+
+    <hr>
+    <button id="my-button">Load Data</button>
+    <p id="output">Click button to load</p>
+
+
+    <script>
+        document.querySelector("#my-button").onclick = loadJsonFetch;
+
+        // Part 4 (Final Part)
+        function loadJsonFetch() {
+            fetch('https://swapi.dev/api/people/1') // get a Star Wars character
+                .then(response => {
+                    if (response.ok) {
+                        return response.json()
+                    }
+                    return response.text().then(text => {
+                        throw text
+                    })
+                })
+                .then(json => {     //THe second promise is resolved
+                    console.log(json);
+                    console.log(json.name);
+                    console.log(json.homeworld);
+                })
+                .catch(error => {
+                    //error
+                    console.log(error);
+                })
+        }
+
+        //Part 1
+        // function loadJsonFetch() {
+        //     const promise = fetch('https://swapi.dev/api/people/1'); // get a Star Wars character
+        //     console.log(promise); // "Promise {<pending>}"
+        // }
+
+        //Part 2
+        // function loadJsonFetch() {
+        //     fetch('https://swapi.dev/api/people/1') // get a Star Wars character
+        //         .then(response => {
+        //             //success
+        //             console.log(response);
+        //             console.log(response.json()); // "Promise {<pending>}"
+        //         })
+        //         .catch(error => {
+        //             //error
+        //             console.log(error);
+        //         })
+        // }
+
+        //Part 3
+        // function loadJsonFetch() {
+        //     fetch('https://swapi.dev/api/people/1') // get a Star Wars character
+        //         .then(response => response.json())
+        //         .then(json => {     //THe second promise is resolved
+        //             console.log(json);
+        //             console.log(json.name);
+        //             console.log(json.homeworld);
+        //         })
+        //         .catch(error => {
+        //             //error
+        //             console.log(error);
+        //         })
+        // }
+
+        // function loadJsonXHR() {
+        //     const url = "data/simple-pet-names.json";
+        //     const xhr = new XMLHttpRequest();
+
+        //     xhr.onload = (e) => {
+        //         console.log(`In onload - HTTP Status Code = ${e.target.status}`);
+        //         const json = e.target.responseText;
+
+        //         let obj;
+        //         try {
+        //             obj = JSON.parse(json);
+        //             console.log(obj);
+        //         }
+        //         catch {
+        //             document.querySelector("#output").innerHTML = "json has error";
+        //         }
+
+        //         dogs = obj.dognames;
+        //         cats = obj.catnames;
+
+        //         // for (var i = 0; i < dogs.length; i++) {
+        //         //     console.log(dogs[i]);
+        //         // }
+
+        //         const dogHtml = `<ol>${dogs.map(w => `<li>${w}</li>`).join("")}</ol>`;
+        //         const catHtml = `<ol>${cats.map(w => `<li>${w}</li>`).join("")}</ol>`;
+        //         //const birdHtml = `<ol>${birdNames.map(w => `<li>${w}</li>`).join("")}</ol>`;
+
+        //         const html = `
+        //         <h3>Dog Names</h3>
+        //         ${dogHtml}
+        //         <h3>Cat Names</h3>
+        //         ${catHtml}
+        //         `;
+
+        //         document.querySelector("#output").innerHTML = html;
+        //     };
+        //     xhr.onerror = e => console.log(`In onerror - HTTP Status Code = ${e.target.status}`);
+        //     xhr.open("GET", url);
+        //     xhr.send();
+        // }
+    </script>
+</body>
+
+</html>
