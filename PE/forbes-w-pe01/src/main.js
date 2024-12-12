@@ -6,14 +6,14 @@ const words2 = ["Propulsion", "Dissipation", "Sensor", "Improbability", "Buffer"
 
 const words3 = ["Chamber", "Interface", "Coil", "Polymer", "Biosphere", "Platform", "Thruster", "Deflector", "Replicator", "Tricorder", "Operation", "Array", "Matrix", "Grid", "Sensor", "Mode", "Panel", "Storage", "Conduit", "Pod", "Hatch", "Regulator", "Display", "Inverter", "Spectrum", "Generator", "Cloud", "Field", "Terminal", "Module", "Procedure", "System", "Diagnostic", "Device", "Beam", "Probe", "Bank", "Tie-In", "Facility", "Bay", "Indicator", "Cell"];
 
-function main() {
+const main = () => {
 
     generate();
     document.querySelector("#myButton").onclick = generate;
     // document.querySelector("#myButton").addEventListener("clcik",generate);
 
-}
-function generate() {
+};
+const generate = () => {
     function randomElement(array) {
         return array = words1[Math.floor(Math.random() * array.length)];
     }
@@ -21,5 +21,5 @@ function generate() {
     //return randomElement(words1) + " " +  randomElement(words2) + " " +  randomElement(words3);
     const str = `${randomElement(words1)} ${randomElement(words2)} ${randomElement(words3)}`;
     document.querySelector("#output").innerHTML = str;
-}
+};
 window.onload = main;

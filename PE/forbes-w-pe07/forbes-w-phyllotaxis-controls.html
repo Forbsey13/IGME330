@@ -19,9 +19,9 @@
 		let paused = false;
 		const fps = 60;
 
-		window.onload = init;
+		window.onload = init();
 
-		function init() {
+		const init = () => {
 			ctx = canvas.getContext("2d");
 			canvas.width = canvasWidth;
 			canvas.height = canvasHeight;
@@ -43,9 +43,9 @@
 				init();
 			};
 			
-		}
+		};
 
-		function loop() {
+		const loop = () => {
 			setTimeout(loop, 1000 / 60);
 
 			// each frame draw a new dot
@@ -88,7 +88,7 @@
 			if (n % 5 == 0) {
 				n += 5;
 			}
-		}
+		};
 
 		// helpers
 		function dtr(degrees) {
