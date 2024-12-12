@@ -1,14 +1,14 @@
-footer,header,main{
+/* footer,header,main{
     width: 500px;
-  }
+  } */
   
-  h1{
+  /* h1{
     font-family: sans-serif;
     color: white;
     background-color: darkblue;
     padding: .3rem;
     text-align:center;
-  }
+  } */
   
   footer{
     font-family: courier;

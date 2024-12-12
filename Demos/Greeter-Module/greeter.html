@@ -4,28 +4,51 @@
 <head>
   <meta charset="utf-8" />
   <title>Greeter (with modules)</title>
-  <link rel="stylesheet" href="styles/default-styles.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- <link rel="stylesheet" href="styles/default-styles.css" /> -->
   <!-- <script type="module" src="src/main.js"></script> -->
   <script src="dist/bundle.js" defer></script>
 </head>
 
 <body>
-  <header>
-    <h1>Greeter App (with modules)</h1>
-  </header>
-  <main>
-    <button id="btn-hello">Hello</button>
-    <button id="btn-goodbye">Goodbye</button>
-    <input id="input-firstname" placeholder="Type in your name">
-    <p>
-      <input type="checkbox" id="cb-forcefully">
-      <label for="cb-forcefully"> Forcefully</label>
-    </p>
-    <p id="output">???</p>
-  </main>
-  <footer>
-    &copy; 2022 Ace Coder
-  </footer>
+  <div class="columns">
+    <div class="column">
+      <header class="hero">
+        <h1 class="has-background-info">Greeter App (with modules)</h1>
+      </header>
+      <main class="columns-is-multiline">
+        <div class="card">
+          <div class="card-image">
+            <div class="image-is-square">
+              <button id="btn-hello">Hello</button>
+              <button id="btn-goodbye">Goodbye</button>
+            </div>
+            <input id="input-firstname" pl aceholder="Type in your name">
+          </div>
+          <div class="card-content">
+            <div class="media">
+              <div class="media-content">
+                <p>
+                  <input type="checkbox" id="cb-forcefully" class="checkbox">
+                  <label for="cb-forcefully"> Forcefully</label>
+                </p>
+              </div>
+              <div class="media">
+
+                <p id="output">???</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <footer>
+        &copy; 2022 Ace Coder
+      </footer>
+    </div>
+    <div class="column"></div>
+    <div class="column"></div>
+  </div>
 </body>
 
 </html>
