@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adoptable Creatures</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- <link rel="stylesheet" href="css/styles.css" /> -->
+    <script type="module" src="js/main.js"></script>
+    <script src="dist/bundle.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="hero  has-background-black has-text-white has-text-centered">
+            <h1>Adoptable Creatures</h1>
+        </div>
+        <div class="column is-one-quarter">
+            <p>Choose a category to view adoptable creatures:</p>
+        </div>
+    </header>
+    <main>
+        <div class="column is-one-quarter">
+        <section>
+            <label for="creatureType">Select a type:</label>
+            <select id="creatureType">
+                <option value="cats">Cats</option>
+                <option value="dogs">Dogs</option>
+                <option value="dragons">Dragons</option>
+            </select>
+            <button id="getDataButton">Get Data</button>
+        </section>
+        </div>  
+        <section id="errorMessage">Error loading data</section>
+        <section id="results" class="columns is-multiline">
+            <!-- Result Here -->
+        </section>
+        
+    </main>
+    
+    <footer>
+        <div class="footer has-background-black has-text-centered has-text-white">
+            <p>Final Practical: Adoptable Creatures API - by Will Forbes</p>
+        </div>
+    </footer>
+</body>
+
+</html>
